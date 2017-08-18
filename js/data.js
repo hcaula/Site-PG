@@ -22,11 +22,9 @@ links.innerHTML+="</ul>";
 var theChosenOne = function(option){
   if(option != chosen){
     document.getElementById(chosen).hidden = true;
-    if(option == 'index') {
-      chosen = 'main';
-    } else if(option == 'monitores'){
-      chosen = 'monitores';
-    }
-    document.getElementById(chosen).hidden = false;
+    document.getElementById('choose'+chosen).classList.remove('active');
+    chosen = option;
+    document.getElementById(option).hidden = false;
+    document.getElementById('choose'+chosen).classList.add('active');
   }
 }

@@ -17,10 +17,10 @@
 <div class="nav" id="nav">
   <nav aria-label="Page navigation">
     <ul class="pagination">
-      <li class="active"><a onclick="theChosenOne('index')">PG</a></li>
-      <li><a href="/cronograma.html">cronograma</a></li>
-      <li><a href="/notas.html">notas</a></li>
-      <li><a onclick="theChosenOne('monitores')">monitores</a></li>
+      <li id='choosemain' class="active"><a onclick="theChosenOne('main')">PG</a></li>
+      <li id="choosecrono"><a href="/cronograma.html">cronograma</a></li>
+      <li id="choosenotas"><a href="/notas.html">notas</a></li>
+      <li id="choosemonitores"><a onclick="theChosenOne('monitores')">monitores</a></li>
     </ul>
   </nav>
 </div>
@@ -44,7 +44,8 @@
         <p> {placeholder} </p>
       </div>
     </div>
-    <div class="container-fluid" id="monitores">
+    <div class="container-fluid" id="monitores" hidden>
+      <h1>HELLO!</h1>
     </div>
   </div>
 </div>
