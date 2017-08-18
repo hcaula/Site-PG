@@ -46,9 +46,10 @@ function readTextFile(file) {
         /* Pegue os monitores */
         for(var i=0; i < numMonitores; i++){
           var monitor = {};
-          monitor.nome = split[lastLine+i*3+1];
-          monitor.face = split[lastLine+i*3+2];
-          monitor.img = split[lastLine+i*3+3]
+          monitor.nome = split[lastLine+i*4+1];
+          monitor.login = split[lastLine+i*4+2]
+          monitor.face = split[lastLine+i*4+3];
+          monitor.img = split[lastLine+i*4+4]
           monitores.push(monitor);
         }
 
