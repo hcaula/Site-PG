@@ -93,11 +93,6 @@ a:hover {
 }
 
 @font-face {
-  font-family: tecnico;
-  src: url('../assets/fonts/tecnico/tecnico_regular.ttf');
-}
-
-@font-face {
   font-family: coco-gothic;
   src: url('../assets/fonts/coco-gothic/CocoGothic-Light_trial.ttf');
 }
