@@ -86,3 +86,20 @@ var requestHTML = function(html) {
   }
   rawFile.send(null);
 }
+
+/* Função para requisitar JSON (caledário) */
+var requestJSON = function(){
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", "https://api.myjson.com/bins/8pa21", false);
+  rawFile.onreadystatechange = function () {
+    if(rawFile.readyState === 4) {
+      if(rawFile.status === 200 || rawFile.status == 0) {
+        var file = rawFile.responseText;
+        console.log(file);
+      }
+    }
+  }
+  rawFile.send(null);
+}
+
+// requestJSON();
