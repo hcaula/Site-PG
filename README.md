@@ -12,8 +12,8 @@ Período
 Professor
 Horário das aulas
 Sala
-(para cada link:)
-Nome do link0: link0 | Nome do link1: link1 (o espaço antes e depois do pipeline é importante)
+(para cada link)
+<a href="https://seulinkaqui.com"> Descrição do link (ex.: Grupo do Facebook) </a> | (próximo link)
 Quantidade de monitores
 (para cada monitor, faça)
 Nome do monitor
@@ -21,10 +21,13 @@ Link do Facebook
 Caminho da imagem (em relação à root do projeto - o caminho é .assets/imgs/monitores/)
 ```
 
+Peço perdão pelo pequeno uso de HTML no arquivo. Porém, foi a melhor alternativa para manter um
+maior dinamismo para novos tipos de links.
+
 ## Instruções para testes locais
-Navegadores normalmente não permitem acessos à arquivos locais por motivos de segurança.
-Uma alternativa é desbloquear essa restrições do seu navegador, porém, isso deixaria seu
-computador propenso à ataques.<br />
+Navegadores normalmente não permitem acessos a arquivos locais, por motivos de segurança.
+Uma alternativa é desbloquear essa restrição do seu navegador - porém, isso deixaria seu
+computador propenso a ataques.<br />
 Portanto, é preferível rodar um pequeno servidor para testar o HTML localmente. A forma
 mais simples é utilizar o módulo já instalado com o Python, o Simple HTTP Server.
 
@@ -35,7 +38,7 @@ cd [diretorio do projeto]
 python -m http.server
 ```
 
-- Linux/Mac
+- Linux/Mac (Python já vem instalado)
 
 ```
 cd [diretorio do projeto]
