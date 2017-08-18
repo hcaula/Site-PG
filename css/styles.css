@@ -9,7 +9,7 @@ body {
   border: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/imgs/test.jpg');
+  
   /*background-image: url('http://www.planwallpaper.com/static/images/background-wallpapers-32.jpg');*/
 
 }
@@ -17,11 +17,10 @@ body {
 .nav {
   font-family: coco-gothic;
   text-align: center;
-  /*background-color: rgba(0,0,0,0.5);*/
   position: fixed;
   width: 100vw;
-
 }
+
 
 @font-face {
   font-family: tecnico;
