@@ -9,11 +9,9 @@ paragraph += "<p style='font-family: tecnico'><i>IF680 - Processamento Gráfico<
 body.innerHTML = '<div '+style+'>'+paragraph+'</div>';
 
 body.onload = function(){
-  setTimeout(function(){
-    body.innerHTML = html;
-    data.monitores.forEach(function(monitor,i){
-      var s = '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.img+'"><div class="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.face+'"id="facebook"><img id="fbicon" src="../assets/imgs/facebook.png"></a></div></div></div>'
-      document.getElementById('monitores').innerHTML += s;
-    });
-  }, 10000);
+  body.innerHTML = html;
+  data.monitores.forEach(function(monitor,i){
+    var s = '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.img+'"><div class="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.face+'"id="facebook"><img id="fbicon" src="../assets/imgs/facebook.png"></a></div></div></div>'
+    document.getElementById('monitores').innerHTML += s;
+  });
 };
