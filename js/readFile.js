@@ -28,12 +28,11 @@ function readTextFile(file) {
         professor = split[1];
         horario = split[2];
         sala = split[3];
-        drive = split[4];
-        facebook = split[5];
+        links = split[4];
 
         /* Variáveis auxiliares */
-        var numMonitores = parseInt(split[6]);
-        var lastLine = 6;
+        var numMonitores = parseInt(split[5]);
+        var lastLine = 5;
 
         /* Pegue os monitores */
         for(var i=0; i < numMonitores; i++){
@@ -49,8 +48,7 @@ function readTextFile(file) {
           periodo: periodo,
           horario: horario,
           sala: sala,
-          drive: drive,
-          facebook: facebook,
+          links: links,
           monitores: monitores
         }
       }

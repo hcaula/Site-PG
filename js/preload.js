@@ -10,4 +10,5 @@ body.innerHTML = '<div '+style+'>'+paragraph+'</div>';
 
 body.onload = function(){
   body.innerHTML = html;
+  document.getElementById('global').style.margin = '70px 0px 0px 0px';
 };

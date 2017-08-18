@@ -15,12 +15,15 @@ body {
   background-size: auto;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .nav {
   font-family: coco-gothic;
   text-align: center;
-  position: sticky;
   width: 100vw;
-  /*background-color: rgba(0, 0, 0, 0.5);*/
+  position: fixed;
 }
 
 .global {
@@ -31,13 +34,32 @@ body {
   display: inline-block;
   min-width: 80vw;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
 }
 
 .title {
   text-align: center;
   color: #f7f5e8;
   font-family: coco-gothic-caps;
+  /*border-bottom: thin solid #f7f5e8;*/
+}
+
+.params {
+  margin-top: 20px;
+  text-align: justify;
+  color: #f7f5e8;
+}
+
+.par {
+  border-bottom: thin solid #f7f5e8;
+  min-width: 30vw;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.answer {
+
 }
 
 @font-face {
