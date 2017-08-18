@@ -12,13 +12,13 @@ Período
 Professor
 Horário das aulas
 Sala
-Google Drive
-Grupo do Facebook
-Número de monitores
+(para cada link:)
+Nome do link0: link0 | Nome do link1: link1 (o espaço antes e depois do pipeline é importante)
+Quantidade de monitores
 (para cada monitor, faça)
 Nome do monitor
 Link do Facebook
-Caminho da imagem (em relação à root do projeto)
+Caminho da imagem (em relação à root do projeto - o caminho é .assets/imgs/monitores/)
 ```
 
 ## Instruções para testes locais

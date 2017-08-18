@@ -1,5 +1,5 @@
-var file, periodo, horario, sala, drive, facebook;
-var monitores = [];
+var file, periodo, horario, sala;
+var monitores = [], links = [];
 var data = {};
 
 function readTextFile(file) {
@@ -28,7 +28,11 @@ function readTextFile(file) {
         professor = split[1];
         horario = split[2];
         sala = split[3];
-        links = split[4];
+
+        var linkString = split[4].split(' | ');
+        linkString.forEach(function(link){
+          links.push(link);
+        });
 
         /* Variáveis auxiliares */
         var numMonitores = parseInt(split[5]);
@@ -51,6 +55,7 @@ function readTextFile(file) {
           links: links,
           monitores: monitores
         }
+        console.log(data);
       }
     }
   }
