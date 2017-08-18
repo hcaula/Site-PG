@@ -21,10 +21,10 @@ Quantidade de monitores
 Nome do monitor
 Login do CIn
 Link do Facebook
-Caminho da imagem (em relação à root do projeto - o caminho é .assets/imgs/monitores/)
+Caminho da imagem (em relação à root do projeto - o caminho é ./assets/imgs/monitores/)
 ```
 
-Obs#1: Os espaços antes e depois dos pipelines <strong>importam</strong>!
+Obs#1: Os espaços antes e depois dos pipelines <strong>importam</strong>! </ br>
 Obs#2: Peço perdão pelo pequeno uso de HTML na parte do link. Porém, foi a melhor alternativa para manter um
 maior dinamismo para novos tipos de links.
 
