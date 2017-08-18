@@ -1,4 +1,4 @@
-var file, periodo, horario, sala;
+var file, periodo, horario, sala, professor;
 var monitores = [], links = [];
 var data = {};
 
@@ -50,6 +50,7 @@ function readTextFile(file) {
         /* Crie um objeto data para mais fácil manipulação */
         data = {
           periodo: periodo,
+          professor: professor,
           horario: horario,
           sala: sala,
           links: links,
@@ -63,3 +64,19 @@ function readTextFile(file) {
 }
 
 readTextFile("data.txt");
+
+
+/* Função para requisitar outros arquivos HTML */
+var requestHTML = function(html) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", html, false);
+  rawFile.onreadystatechange = function () {
+    if(rawFile.readyState === 4) {
+      if(rawFile.status === 200 || rawFile.status == 0) {
+        var file = rawFile.responseText;
+        document.getElementById('body').innerHTML = file;
+      }
+    }
+  }
+  rawFile.send(null);
+}
