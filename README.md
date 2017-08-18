@@ -14,14 +14,18 @@ Horário das aulas
 Sala
 (para cada link)
 <a href="https://seulinkaqui.com"> Descrição do link (ex.: Grupo do Facebook) </a> | (próximo link)
+(para cada referência bibliográfica)
+Referência | (próxima referência)
 Quantidade de monitores
 (para cada monitor, faça)
 Nome do monitor
+Login do CIn
 Link do Facebook
 Caminho da imagem (em relação à root do projeto - o caminho é .assets/imgs/monitores/)
 ```
 
-Peço perdão pelo pequeno uso de HTML no arquivo. Porém, foi a melhor alternativa para manter um
+Obs#1: Os espaços antes e depois dos pipelines <strong>importam</strong>!
+Obs#2: Peço perdão pelo pequeno uso de HTML na parte do link. Porém, foi a melhor alternativa para manter um
 maior dinamismo para novos tipos de links.
 
 ## Instruções para testes locais
@@ -44,6 +48,11 @@ python -m http.server
 cd [diretorio do projeto]
 python -m SimpleHTTPServer
 ```
+
+## Possíveis todo's
+- Requisitar foto do facebook automaticamente através do link;
+- Dividir o HTML e fazer uma nova requisição para cada <i>tab</i>;
+- Uma <i>tab</i> para projetos live em Javascript.
 
 ### Curso
 Universidade Federal de Pernambuco <br />
