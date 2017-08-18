@@ -10,5 +10,9 @@ body.innerHTML = '<div '+style+'>'+paragraph+'</div>';
 
 body.onload = function(){
   body.innerHTML = html;
-  document.getElementById('info').style.margin = '70px 0px 0px 0px';
+  // document.getElementById('info').style.margin = '70px 0px 0px 0px';
+  data.monitores.forEach(function(monitor,i){
+    var s = '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.img+'"><div class="caption"><h3 id="name">'+monitor.nome+'</h3><a href="'+monitor.face+'"id="facebook"><img id="fbicon" src="../assets/imgs/facebook.png"></a></div></div></div>'
+    document.getElementById('monitores').innerHTML += s;
+  });
 };

@@ -3,10 +3,22 @@ Prof. Silvio Melo
 Sexta-feira | 8h - 10h
 D-002
 <a href="https://drive.google.com/drive/folders/0Bw0tUCMUoMKWVkx0YmpwTEs5eTQ?usp=sharing">Google Drive</a> | <a href="https://facebook.com">Grupo do Facebook</a>
-2
+6
 Ullayne Fernandes
 https://www.facebook.com/ullayne.fernandes
 ./assets/imgs/monitores/ullayne.jpg
+Luiz Henrique Santos
+https://www.facebook.com/luishnsantos
+./assets/imgs/monitores/luis.jpg
 Henrique Caúla
 https://www.facebook.com/hcaula
 ./assets/imgs/monitores/hcaula.jpg
+André De' Carli
+https://www.facebook.com/decodecarli
+./assets/imgs/monitores/andre.jpg
+Guilherme Sá
+https://www.facebook.com/guilherme.sa.73
+./assets/imgs/monitores/guilherme.jpg
+Luca Ananias
+https://www.facebook.com/luca.ananias
+./assets/imgs/monitores/luca.jpg

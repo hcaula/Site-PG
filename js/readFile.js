@@ -65,7 +65,6 @@ function readTextFile(file) {
 
 readTextFile("data.txt");
 
-
 /* Função para requisitar outros arquivos HTML */
 var requestHTML = function(html) {
   var rawFile = new XMLHttpRequest();
