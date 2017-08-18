@@ -19,6 +19,20 @@ a:hover {
   cursor: pointer;
 }
 
+.pagination>.active>a {
+  background-color: #35373a;
+  border-color: #35373a;
+}
+
+.pagination>.active>a:hover {
+  background-color: #1e1f21;
+  border-color: #1e1f21;
+}
+
+.pagination>li>a {
+  color: #35373a;
+}
+
 .nav {
   font-family: coco-gothic;
   text-align: center;
