@@ -1,6 +1,7 @@
 var file, periodo, horario, sala, drive, facebook;
 var monitores = [];
 var data = {};
+var loaded = false;
 
 function readTextFile(file) {
 
