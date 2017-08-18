@@ -1,5 +1,5 @@
 var file, periodo, horario, sala, professor;
-var monitores = [], links = [];
+var monitores = [], links = [], referencias = [];
 var data = {};
 
 function readTextFile(file) {
@@ -34,9 +34,14 @@ function readTextFile(file) {
           links.push(link);
         });
 
+        var referenciasString = split[5].split(' | ');
+        referenciasString.forEach(function(referencia){
+          referencias.push(referencia);
+        });
+
         /* Variáveis auxiliares */
-        var numMonitores = parseInt(split[5]);
-        var lastLine = 5;
+        var numMonitores = parseInt(split[6]);
+        var lastLine = 6;
 
         /* Pegue os monitores */
         for(var i=0; i < numMonitores; i++){
@@ -52,6 +57,7 @@ function readTextFile(file) {
           periodo: periodo,
           professor: professor,
           horario: horario,
+          referencias: referencias,
           sala: sala,
           links: links,
           monitores: monitores

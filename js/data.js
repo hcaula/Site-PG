@@ -5,6 +5,7 @@ var sala = document.getElementById('local');
 var links = document.getElementById('links');
 var main = document.getElementById('main');
 var monitores = document.getElementById('monitores');
+var referencias = document.getElementById('referencias');
 
 var chosen = 'main';
 
@@ -18,6 +19,12 @@ data.links.forEach(function(link){
   links.innerHTML += "<li>"+link+"</li>";
 });
 links.innerHTML+="</ul>";
+
+referencias.innerHTML="<ul>"
+data.referencias.forEach(function(referencia) {
+  referencias.innerHTML += "<li>"+referencia+"</li>";
+});
+referencias.innerHTML+="</ul>";
 
 var theChosenOne = function(option){
   if(option != chosen){
