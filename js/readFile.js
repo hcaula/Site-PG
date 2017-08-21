@@ -102,4 +102,4 @@ var requestJSON = function(){
   rawFile.send(null);
 }
 
-// requestJSON();
+requestJSON();
