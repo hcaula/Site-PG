@@ -86,21 +86,3 @@ var requestHTML = function(html) {
   }
   rawFile.send(null);
 }
-
-/* Função para requisitar JSON (caledário) */
-var requestJSON = function(){
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", "https://github.com/hcaula/hcaula.github.io/blob/master/data.txt", true);
-  rawFile.setRequestHeader('Access-Control-Allow-Origin', '*');
-  rawFile.onreadystatechange = function () {
-    if(rawFile.readyState === 4) {
-      if(rawFile.status === 200 || rawFile.status == 0) {
-        var file = rawFile.responseText;
-        console.log(file);
-      }
-    }
-  }
-  rawFile.send(null);
-}
-
-requestJSON();
