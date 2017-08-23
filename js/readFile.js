@@ -22,7 +22,8 @@ var requestJSON = function(){
 
 var requestCalendar = function(){
   var xhs = new XMLHttpRequest();
-  xhs.open('GET', "https://jsonblob.com/api/db213ce4-87ad-11e7-8b46-c3a2c9ab8799", false);
+  var h = CryptoJS.AES.decrypt("U2FsdGVkX18rD6yVPykv0Hfwe2c4dTe/YS6Obbmae//tohdERrhyiaCQ2jUcCh2A7xj34dP+R1H231TLoLHecCUZH+RNkvBt1Mq1qmgXk1E=", "Secret Message");
+  xhs.open('GET', h.toString(CryptoJS.enc.Utf8), false);
   xhs.onreadystatechange = function() {
     if(xhs.readyState === 4) {
       if(xhs.status === 200 || xhs.status == 0) {
