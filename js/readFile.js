@@ -1,6 +1,7 @@
 var file, periodo, horario, sala, professor;
 var monitores = [], links = [], referencias = [];
 var data = {};
+var cronograma = {};
 
 /* Função para requisitar JSON (caledário) */
 var requestJSON = function(){
@@ -12,6 +13,21 @@ var requestJSON = function(){
       if(xhs.status === 200 || xhs.status == 0) {
         var file = xhs.responseText;
         data = JSON.parse(file);
+        requestCalendar();
+      }
+    }
+  }
+  xhs.send(null);
+}
+
+var requestCalendar = function(){
+  var xhs = new XMLHttpRequest();
+  xhs.open('GET', "https://jsonblob.com/api/db213ce4-87ad-11e7-8b46-c3a2c9ab8799", false);
+  xhs.onreadystatechange = function() {
+    if(xhs.readyState === 4) {
+      if(xhs.status === 200 || xhs.status == 0) {
+        var file = xhs.responseText;
+        cronograma = JSON.parse(file);
       }
     }
   }

@@ -11,9 +11,8 @@ var paragraph = "<p style='font-size:30px'><i class='fa fa-circle-o-notch fa-spi
 var random = frases[parseInt((Math.random() * 3))];
 paragraph += "<p><i>IF680 - Processamento Gráfico</i></p><br>" + random;
 
-
 body.innerHTML = '<div '+style+'>'+paragraph+'</div>';
 
 body.onload = function(){
   body.innerHTML = html;
-};
+}

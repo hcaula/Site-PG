@@ -74,6 +74,12 @@ a:hover {
   padding-bottom: 8px;
 }
 
+.crono {
+  color: #f7f5e8;
+  text-align: justify;
+  list-style-type: none;
+}
+
 #monitores {
   text-align: center;
 }

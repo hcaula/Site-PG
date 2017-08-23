@@ -32,6 +32,17 @@ data.monitores.forEach(function(monitor,i){
 });
 document.getElementById('monitores').innerHTML += s;
 
+s = ''
+document.getElementById('dates').innerHTML += ''
+cronograma.cronograma.forEach(function(evento){
+  var date = new Date(evento.data);
+  s += "<li><h3 class='par'>"+evento.data + " | " + evento.horario+"</h3>";
+  s += "<h4>"+evento.sala+"</h4>";
+  s += "<p class='answer'>"+evento.descricao+"</p></li>"
+});
+document.getElementById('dates').innerHTML += s;
+
+
 var theChosenOne = function(option){
   if(option != chosen){
     document.getElementById(chosen).hidden = true;
