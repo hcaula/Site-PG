@@ -1,32 +1,8 @@
 # Site do curso de Processamento Gráfico - IF680
 
 ## Instruções para monitores
-Para facilitar a atualização da página semestral, existe um arquivo ```data.txt``` com as informações
-atualizadas da cadeira. A cada renovação de período, basta atualizar este arquivo e o site
-estará em dia.
-
-A fim de evitar erros de entrada no arquivo, siga o seguinte formato:
-
-```
-Período
-Professor
-Horário das aulas
-Sala
-(para cada link)
-<a href="https://seulinkaqui.com"> Descrição do link (ex.: Grupo do Facebook) </a> | (próximo link)
-(para cada referência bibliográfica)
-Referência | (próxima referência)
-Quantidade de monitores
-(para cada monitor, faça)
-Nome do monitor
-Login do CIn
-Link do Facebook
-Caminho da imagem (em relação à root do projeto - o caminho é ./assets/imgs/monitores/)
-```
-
-Obs#1: Os espaços antes e depois dos pipelines <strong>importam</strong>! </ br>
-Obs#2: Peço perdão pelo pequeno uso de HTML na parte do link. Porém, foi a melhor alternativa para manter um
-maior dinamismo para novos tipos de links.
+Para facilitar a atualização da página semestral, o conteúdo do site pode ser dinamicamente
+modificado através dos links encontrados no diretório dos monitores do <a href="https://drive.google.com/drive/u/1/folders/0B1loIzeJOH16NlE4d21ZQ2NnWU0">Google Drive</a>.
 
 ## Instruções para testes locais
 Navegadores normalmente não permitem acessos a arquivos locais, por motivos de segurança.
@@ -51,7 +27,6 @@ python -m SimpleHTTPServer
 
 ## Possíveis todo's
 - Requisitar foto do facebook automaticamente através do link;
-- Dividir o HTML e fazer uma nova requisição para cada <i>tab</i>;
 - Uma <i>tab</i> para projetos live em Javascript.
 
 ### Curso
