@@ -5,7 +5,8 @@ var data = {};
 /* Função para requisitar JSON (caledário) */
 var requestJSON = function(){
   var xhs = new XMLHttpRequest();
-  xhs.open("GET", "https://jsonblob.com/api/jsonBlob/4447f9fc-8784-11e7-8b46-11785453a17b", false);
+  var h = CryptoJS.AES.decrypt("U2FsdGVkX19UiRbhz+Q8AEfc70LcAri3i2HJDYneaPkBgsXSnEamiIfKX50KF993/rcywPINFt1WnqBm+wDbBwacJiSNHeq0Sy9qzP7aT30jS6QL2XPl2NognTnh63MN", "Secret Message");
+  xhs.open("GET", h.toString(CryptoJS.enc.Utf8), false);
   xhs.onreadystatechange = function () {
     if(xhs.readyState === 4) {
       if(xhs.status === 200 || xhs.status == 0) {
@@ -16,5 +17,4 @@ var requestJSON = function(){
   }
   xhs.send(null);
 }
-
 requestJSON();
