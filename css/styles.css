@@ -13,6 +13,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: auto;
+  background-attachment: fixed;
 }
 
 a:hover {

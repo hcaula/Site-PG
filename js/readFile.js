@@ -11,7 +11,6 @@ var requestJSON = function(){
       if(xhs.status === 200 || xhs.status == 0) {
         var file = xhs.responseText;
         data = JSON.parse(file);
-        console.log(data);
       }
     }
   }
