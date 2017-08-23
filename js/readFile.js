@@ -6,7 +6,8 @@ var cronograma = {};
 /* Função para requisitar JSON (caledário) */
 var requestJSON = function(){
   var xhs = new XMLHttpRequest();
-  var h = CryptoJS.AES.decrypt("U2FsdGVkX19UiRbhz+Q8AEfc70LcAri3i2HJDYneaPkBgsXSnEamiIfKX50KF993/rcywPINFt1WnqBm+wDbBwacJiSNHeq0Sy9qzP7aT30jS6QL2XPl2NognTnh63MN", "Secret Message");
+  var s = CryptoJS.AES.decrypt("U2FsdGVkX1/SgulY3AZ2DFJiaOiU7YVcDrDI7rJanqA=", "Secs Mess");
+  var h = CryptoJS.AES.decrypt("U2FsdGVkX19UiRbhz+Q8AEfc70LcAri3i2HJDYneaPkBgsXSnEamiIfKX50KF993/rcywPINFt1WnqBm+wDbBwacJiSNHeq0Sy9qzP7aT30jS6QL2XPl2NognTnh63MN", s.toString(CryptoJS.enc.Utf8));
   xhs.open("GET", h.toString(CryptoJS.enc.Utf8), false);
   xhs.onreadystatechange = function () {
     if(xhs.readyState === 4) {
