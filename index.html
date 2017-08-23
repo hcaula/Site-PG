@@ -2,12 +2,13 @@
 <html>
 <head>
   <title> IF680 - Processamento Gráfico </title>
+  <script src="./assets/libraries/aes.js"></script>
+  <script src="./js/readFile.js"></script>
   <link rel="stylesheet" href="./assets/libraries/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/libraries/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="icon" href="./assets/imgs/fire.png">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/readFile.js"></script>
   <meta name="viewport" content="width=device-width">
   <meta charset="UTF-8">
 </head>
@@ -51,6 +52,8 @@
     </div>
     <div class="container-fluid" id="crono" hidden>
       <h1 class="title">Cronograma</h1>
+      <div class="crono" id="dates">
+      </div>
     </div>
   </div>
 </div>
@@ -59,5 +62,6 @@
 
 <script src="./js/data.js"></script>
 <script src="./js/preload.js"></script>
+
 
 </html>
