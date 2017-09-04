@@ -88,6 +88,15 @@ a:hover {
   margin-bottom: 20px;
 }
 
+#pontosExtrasTitle {
+  display: inline-block;
+  text-align: justify;
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  border-bottom: thin solid white;
+  width: auto;
+}
+
 .canvasjs-chart-credit {
   display: none;
 }

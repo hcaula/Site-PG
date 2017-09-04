@@ -6,6 +6,7 @@ var links = document.getElementById('links');
 var main = document.getElementById('main');
 var monitores = document.getElementById('monitores');
 var referencias = document.getElementById('referencias');
+var pontosExtras = document.getElementById('pontosExtras');
 
 var chosen = 'main';
 
@@ -54,9 +55,11 @@ var theChosenOne = function(option){
 }
 
 
+var extraPoints = '';
 var renderChart = function() {
   var dataPoints = [];
-  data.metodo_avaliacao.unidades.forEach(function(unidade){
+  document.getElementById('pontosExtras').innerHTML = 'Pontos extras: ';
+  data.metodo_avaliacao.unidades.forEach(function(unidade, u){
     unidade.forEach(function(avaliacao){
       if(!avaliacao.is_extra) {
         var chartLabel = {};
@@ -64,10 +67,11 @@ var renderChart = function() {
         chartLabel.indexLabelFontColor = 'white';
         chartLabel.y = avaliacao.nota;
         dataPoints.push(chartLabel);
+      } else {
+        document.getElementById('pontosExtras').innerHTML = "<li>" + avaliacao.descricao + " - " + avaliacao.nota + " pontos - " + (u+1) + "ª Unidade </li>";
       }
     });
   });
-
   var chart = new CanvasJS.Chart("avaliacao", {
     backgroundColor: null,
     data: [
@@ -79,5 +83,10 @@ var renderChart = function() {
     }
     ]
   });
+  // extraPointsHTML()
   chart.render();
+}
+
+var extraPointsHTML = function () {
+  pontosExtras.innerHTML += extraPoints;
 }
