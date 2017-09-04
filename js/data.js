@@ -55,18 +55,27 @@ var theChosenOne = function(option){
 
 
 var renderChart = function() {
-  var chart = new CanvasJS.Chart("chartContainer", {
+  var dataPoints = [];
+  data.metodo_avaliacao.unidades.forEach(function(unidade){
+    unidade.forEach(function(avaliacao){
+      if(!avaliacao.is_extra) {
+        var chartLabel = {};
+        chartLabel.label = avaliacao.descricao;
+        chartLabel.indexLabelFontColor = 'white';
+        chartLabel.y = avaliacao.nota;
+        dataPoints.push(chartLabel);
+      }
+    });
+  });
+
+  var chart = new CanvasJS.Chart("avaliacao", {
+    backgroundColor: null,
     data: [
     {
       // Change type to "doughnut", "line", "splineArea", etc.
-      type: "doughnut",
-      dataPoints: [
-        { label: "apple",  y: 10  },
-        { label: "orange", y: 15  },
-        { label: "banana", y: 25  },
-        { label: "mango",  y: 30  },
-        { label: "grape",  y: 28  }
-      ]
+      type: "pie",
+      radius:  "80%",
+      dataPoints: dataPoints
     }
     ]
   });
