@@ -74,10 +74,13 @@ var renderChart = function() {
   });
   var chart = new CanvasJS.Chart("avaliacao", {
     backgroundColor: null,
+    axisY:{
+      valueFormatString: "#.#"
+    },
     data: [
     {
       // Change type to "doughnut", "line", "splineArea", etc.
-      type: "pie",
+      type: "doughnut",
       radius:  "80%",
       dataPoints: dataPoints
     }
