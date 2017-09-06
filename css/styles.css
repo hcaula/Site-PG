@@ -101,6 +101,23 @@ a:hover {
   display: none;
 }
 
+.dataPassada {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.dataFutura {
+  color: inherit;
+}
+
+.dataImportante {
+  border: thin solid white;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius:20px;
+  text-align: center;
+}
+
 #monitores {
   text-align: center;
 }

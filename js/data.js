@@ -35,16 +35,30 @@ document.getElementById('monitores').innerHTML += s;
 
 s = '';
 document.getElementById('dates').innerHTML += '';
+var days = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
 cronograma.cronograma.forEach(function(evento){
+
   var today = new Date();
-  var eventDate = new Date(evento.data + " " + evento.horario);
-  var style = 'style= ';
-  if(eventDate < today) style+="'color: grey; text-decoration: line-through;";
-  else style += "'color: inherit'";
+  var eventDate = new Date(evento.data);
 
-  var data = eventDate.getDay()+'/'+eventDate.getMonth()+'/'+eventDate.getUTCFullYear();
+  var clas;
+  if(eventDate < today) {
+    clas = 'dataPassada';
+  }
+  else {
+    clas = 'dataFutura';
+  }
 
-  s += "<li "+style+"><h3 class='par'>" + data + " | " + evento.horario+"</h3>";
+  if(evento.is_important) style="border: thin solid white;margin-top: 20px;padding: 10px;border-radius:20px;text-align: center;";
+  else style='';
+
+  var month;
+  if(eventDate.getUTCMonth() < 10) month = '0' + (eventDate.getUTCMonth() + 1);
+  else month = (eventDate.getUTCMonth() + 1);
+
+  var data = days[eventDate.getDay()] + ", " + eventDate.getUTCDate()+'/'+month+'/'+eventDate.getUTCFullYear();
+
+  s += "<li class='"+clas+"' style='"+style+"'><h3 class='par'>" + data + " | " + evento.horario+"</h3>";
   s += "<h4>"+evento.sala+"</h4>";
   s += "<p class='answer'>"+evento.descricao+"</p></li>"
 });
