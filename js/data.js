@@ -49,7 +49,7 @@ cronograma.cronograma.forEach(function(evento){
     clas = 'dataFutura';
   }
 
-  if(evento.is_important) style="border: thin solid white;margin-top: 20px;padding: 10px;border-radius:20px;text-align: center;";
+  if(evento.is_important) style="width:auto;border: thin solid white;margin-top: 20px;padding: 10px;border-radius:20px;text-align: center;font-size: 20px;";
   else style='';
 
   var month;
