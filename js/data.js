@@ -33,11 +33,18 @@ data.monitores.forEach(function(monitor,i){
 });
 document.getElementById('monitores').innerHTML += s;
 
-s = ''
-document.getElementById('dates').innerHTML += ''
+s = '';
+document.getElementById('dates').innerHTML += '';
 cronograma.cronograma.forEach(function(evento){
-  var date = new Date(evento.data);
-  s += "<li><h3 class='par'>"+evento.data + " | " + evento.horario+"</h3>";
+  var today = new Date();
+  var eventDate = new Date(evento.data + " " + evento.horario);
+  var style = 'style= ';
+  if(eventDate < today) style+="'color: grey; text-decoration: line-through;";
+  else style += "'color: inherit'";
+
+  var data = eventDate.getDay()+'/'+eventDate.getMonth()+'/'+eventDate.getUTCFullYear();
+
+  s += "<li "+style+"><h3 class='par'>" + data + " | " + evento.horario+"</h3>";
   s += "<h4>"+evento.sala+"</h4>";
   s += "<p class='answer'>"+evento.descricao+"</p></li>"
 });
