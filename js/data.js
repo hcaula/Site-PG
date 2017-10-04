@@ -53,7 +53,7 @@ cronograma.cronograma.forEach(function(evento){
   else style='';
 
   var month;
-  if(eventDate.getUTCMonth() < 10) month = '0' + (eventDate.getUTCMonth() + 1);
+  if(eventDate.getUTCMonth() < 9) month = '0' + (eventDate.getUTCMonth() + 1);
   else month = (eventDate.getUTCMonth() + 1);
 
   var data = days[eventDate.getDay()] + ", " + eventDate.getUTCDate()+'/'+month+'/'+eventDate.getUTCFullYear();
@@ -101,7 +101,7 @@ var renderChart = function() {
     data: [
     {
       // Change type to "doughnut", "line", "splineArea", etc.
-      type: "doughnut",
+      type: "pie",
       radius:  "80%",
       dataPoints: dataPoints
     }
