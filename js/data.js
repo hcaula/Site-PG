@@ -40,32 +40,42 @@ var days = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
 cronograma.cronograma.forEach(function(evento){
 
   var today = new Date();
-  var eventDate = new Date(evento.data);
 
   var clas;
-  if(eventDate < today) {
-    clas = 'dataPassada';
-  }
-  else {
-    clas = 'dataFutura';
-  }
+  var month;
+  var date;
+
+  var eventDate;
+
+  if (evento.data) {
+    eventDate = new Date(evento.data);
+
+    if(eventDate < today) clas = 'dataPassada';
+    else clas = 'dataFutura';
+
+    if(eventDate.getUTCMonth() < 9) month = '0' + (eventDate.getUTCMonth() + 1);
+    else month = (eventDate.getUTCMonth() + 1);
+
+    date = days[eventDate.getDay()] + ", " + eventDate.getUTCDate()+'/'+month+'/'+eventDate.getUTCFullYear();
+  } else date = "Data a definir"
 
   if(evento.is_important) style="width:auto;border: thin solid white;margin-top: 20px;padding: 10px;border-radius:20px;text-align: center;font-size: 20px;";
   else style='';
 
-  var month;
-  if(eventDate.getUTCMonth() < 9) month = '0' + (eventDate.getUTCMonth() + 1);
-  else month = (eventDate.getUTCMonth() + 1);
+  var horario = evento.horario;
+  var sala = evento.sala;
+  var descricao = evento.descricao;
 
-  var data = days[eventDate.getDay()] + ", " + eventDate.getUTCDate()+'/'+month+'/'+eventDate.getUTCFullYear();
+  if (!horario) horario = "Horário a definir";
+  if (!sala) sala = "Local a definir";
+  if (!descricao) descricao = "";
 
-  s += "<li class='"+clas+"' style='"+style+"'><h3 class='par'>" + data + " | " + evento.horario+"</h3>";
-  s += "<h4>"+evento.sala+"</h4>";
-  s += "<p class='answer'>"+evento.descricao+"</p></li>"
+  s += "<li class='"+clas+"' style='"+style+"'><h3 class='par'>" + date + " | " + horario+"</h3>";
+  s += "<h4>"+sala+"</h4>";
+  s += "<p class='answer'>"+descricao+"</p></li>"
 });
 document.getElementById('dates').innerHTML += s;
 
-console.log(data.metodo_avaliacao.unidades);
 s = '';
 data.metodo_avaliacao.unidades.forEach(function(unidade, i){
   s += "<div class='title' id='pontosExtrasTitle'>" + (i+1) + "ª Unidade</div><br>"
