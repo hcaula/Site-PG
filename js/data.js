@@ -6,6 +6,7 @@ var links = document.getElementById('links');
 var main = document.getElementById('main');
 var monitores = document.getElementById('monitores');
 var referencias = document.getElementById('referencias');
+var avaliacao = document.getElementById('avaliacao');
 var pontosExtras = document.getElementById('pontosExtras');
 
 var chosen = 'main';
@@ -64,6 +65,20 @@ cronograma.cronograma.forEach(function(evento){
 });
 document.getElementById('dates').innerHTML += s;
 
+console.log(data.metodo_avaliacao.unidades);
+s = '';
+data.metodo_avaliacao.unidades.forEach(function(unidade, i){
+  s += "<div class='title' id='pontosExtrasTitle'>" + (i+1) + "ª Unidade</div><br>"
+  s += "<ul>";
+  unidade.forEach(function(avaliacao, k) {
+    var extra = '';
+    if (avaliacao.is_extra) extra = " (extra) ";
+    s += "<li><b>" + avaliacao.descricao + "</b>" + extra + " - " + (avaliacao.nota).toFixed(1) + "</li>"
+  });
+  s += "</ul>"
+})
+avaliacao.innerHTML = s;
+
 
 var theChosenOne = function(option){
   if(option != chosen){
@@ -73,42 +88,6 @@ var theChosenOne = function(option){
     document.getElementById(option).hidden = false;
     document.getElementById('choose'+chosen).classList.add('active');
   }
-}
-
-
-var extraPoints = '';
-var renderChart = function() {
-  var dataPoints = [];
-  document.getElementById('pontosExtras').innerHTML = 'Pontos extras: ';
-  data.metodo_avaliacao.unidades.forEach(function(unidade, u){
-    unidade.forEach(function(avaliacao){
-      if(!avaliacao.is_extra) {
-        var chartLabel = {};
-        chartLabel.label = avaliacao.descricao;
-        chartLabel.indexLabelFontColor = 'white';
-        chartLabel.y = avaliacao.nota;
-        dataPoints.push(chartLabel);
-      } else {
-        document.getElementById('pontosExtras').innerHTML = "<li>" + avaliacao.descricao + " - " + avaliacao.nota + " pontos - " + (u+1) + "ª Unidade </li>";
-      }
-    });
-  });
-  var chart = new CanvasJS.Chart("avaliacao", {
-    backgroundColor: null,
-    axisY:{
-      valueFormatString: "#.#"
-    },
-    data: [
-    {
-      // Change type to "doughnut", "line", "splineArea", etc.
-      type: "pie",
-      radius:  "80%",
-      dataPoints: dataPoints
-    }
-    ]
-  });
-  // extraPointsHTML()
-  chart.render();
 }
 
 var extraPointsHTML = function () {

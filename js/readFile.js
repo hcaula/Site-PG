@@ -13,7 +13,6 @@ var requestJSON = function(){
         var file = xhs.responseText;
         data = JSON.parse(file);
         data = JSON.parse(data.files.siteInfo.content);
-        console.log(data);
         requestCalendar();
       }
     }
@@ -30,7 +29,6 @@ var requestCalendar = function(){
         var file = xhs.responseText;
         cronograma = JSON.parse(file);
         cronograma = JSON.parse(cronograma.files.cronograma.content);
-        // console.log(cronograma);
       }
     }
   }

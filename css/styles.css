@@ -80,20 +80,12 @@ a:hover {
   list-style-type: none;
 }
 
-.avaliacao {
-  width: 100%;
-  height: 300px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
 #pontosExtrasTitle {
   display: inline-block;
   text-align: justify;
-  margin-bottom: 8px;
-  padding-bottom: 3px;
-  border-bottom: thin solid white;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: auto;
 }
 

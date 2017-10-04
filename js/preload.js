@@ -15,5 +15,4 @@ body.innerHTML = '<div '+style+'>'+paragraph+'</div>';
 
 body.onload = function(){
   body.innerHTML = html;
-  renderChart();
 }
