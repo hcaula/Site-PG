@@ -30,7 +30,7 @@ referencias.innerHTML+="</ul>";
 
 var s = '';
 data.monitores.forEach(function(monitor,i){
-  s += '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.imagem+'"><div class="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.facebook+'"id="facebook"><img id="fbicon" src="../assets/imgs/facebook.png"></a></div></div></div>';
+  s += '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.imagem+'"><div class="caption" id="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.facebook+'"id="facebook"><img id="fbicon" src="../assets/imgs/facebook.png"></a></div></div></div>';
 });
 document.getElementById('monitores').innerHTML += s;
 
