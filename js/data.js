@@ -22,7 +22,7 @@ sala.innerHTML = data.sala;
 
 links.innerHTML="<ul>";
 data.links.forEach(function(link){
-  links.innerHTML += "<li><a href='"+link.link+"'>"+link.descricao+"</li>"
+  links.innerHTML += "<li><a href='"+link.link+"' target='_blank'>"+link.descricao+"</li>"
 });
 links.innerHTML+="</ul>";
 
@@ -38,7 +38,7 @@ referencias.innerHTML+="</ul>";
 
 var s = '';
 data.monitores.forEach(function(monitor,i){
-  s += '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.imagem+'"><div class="caption" id="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.facebook+'"id="facebook"><img id="fbicon" src="./assets/imgs/facebook.png"></a></div></div></div>';
+  s += '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.imagem+'"><div class="caption" id="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.facebook+'"id="facebook" target="_blank"><img id="fbicon" src="./assets/imgs/facebook.png"></a></div></div></div>';
 });
 document.getElementById('monitores').innerHTML += s;
 
@@ -120,7 +120,7 @@ for(var param in proj_unidades) {
 
   if(un.especificacao) {
     s += "<h4 class='title'>Especificações do projeto</h4>";
-    s += "<p class='proj_params'><a href='"+un.especificacao+"'>Documentação</a></p>"
+    s += "<p class='proj_params'><a href='"+un.especificacao+"' target='_blank'>Documentação</a></p>"
   }
 
   s += "<h4 class='title'>Temas</h4>";
