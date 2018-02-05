@@ -14,6 +14,11 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
   background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -10;
 }
 
 a:hover {
@@ -106,9 +111,7 @@ a:hover {
 .proj_tema {
   color: white;
   text-align: justify;
-  width: 70%;
-  min-width: 270px;
-  max-width: 100%;
+  width: 80%;
   border-bottom: thin solid white;
   margin-bottom: 25px;
 }
