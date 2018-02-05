@@ -8,9 +8,13 @@ var monitores = document.getElementById('monitores');
 var referencias = document.getElementById('referencias');
 var avaliacao = document.getElementById('avaliacao');
 var pontosExtras = document.getElementById('pontosExtras');
+var projetos_unidades = document.getElementById('projetos_unidades');
 
 var chosen = 'main';
 
+/*
+ * SITE INFO
+*/
 periodo.innerHTML = data.periodo;
 professor.innerHTML = data.professor;
 horario.innerHTML = data.dia + " | " + data.horario;
@@ -28,11 +32,19 @@ data.referencias.forEach(function(referencia) {
 });
 referencias.innerHTML+="</ul>";
 
+/*
+ * MONITORES
+*/
+
 var s = '';
 data.monitores.forEach(function(monitor,i){
   s += '<div class="col-sm-6 col-md-3"><div class="thumbnail"><img src="'+monitor.imagem+'"><div class="caption" id="caption"><h3 id="name">'+monitor.nome+'</h3><h5><i>'+monitor.login+'</i></h5><a href="'+monitor.facebook+'"id="facebook"><img id="fbicon" src="./assets/imgs/facebook.png"></a></div></div></div>';
 });
 document.getElementById('monitores').innerHTML += s;
+
+/*
+ * CRONOGRAMA
+*/
 
 s = '';
 document.getElementById('dates').innerHTML += '';
@@ -76,6 +88,10 @@ cronograma.cronograma.forEach(function(evento){
 });
 document.getElementById('dates').innerHTML += s;
 
+/*
+ * MÉTODO DE AVALIAÇÃO
+*/
+
 s = '';
 data.metodo_avaliacao.unidades.forEach(function(unidade, i){
   s += "<div class='title' id='pontosExtrasTitle'>" + (i+1) + "ª Unidade</div><br>"
@@ -89,6 +105,52 @@ data.metodo_avaliacao.unidades.forEach(function(unidade, i){
 })
 avaliacao.innerHTML = s;
 
+/*
+ * PROJETOS
+*/
+var proj_unidades = projetos.unidades;
+var s = '';
+var ordinal = ['Individual', 'Dupla', 'Trio', 'Quarteto', 'Quinteto', 'Sexteto', 'Septeto', 'Octeto', 'Noneto', 'Decteto'];
+for(var param in proj_unidades) {
+  var un = proj_unidades[param];
+  s += "<div class='proj_unidades'>"
+  s += "<h3 class='title' style='border-bottom: thin solid white; padding-bottom: 10px'>" + param + "ª Unidade - " + un.descricao + "</h3>"
+  s += "<h4 class='title'>Motivação</h4>";
+  s += "<p class='proj_params'><i>"+un.motivacao+"</i></p>"
+
+  if(un.especificacao) {
+    s += "<h4 class='title'>Especificações do projeto</h4>";
+    s += "<p class='proj_params'><a href='"+un.especificacao+"'>Documentação</a></p>"
+  }
+
+  s += "<h4 class='title'>Temas</h4>";
+
+  s += "<div class='proj_indice'>";
+  un.temas.forEach(function(tema){
+    s += "• <a style='margin-bottom:15px' href='#"+tema.tema+"'>"+tema.tema + ": " + tema.nome +"</a><br>";
+  });
+  s += "</div>";
+
+  un.temas.forEach(function(tema){
+    s += "<div class='proj_tema' id='"+tema.tema+"'>";
+    s += "<h4 style='color: white'>- " + tema.tema + ": " + tema.nome + "</h4>";
+    s += "<p style='color: white'><i>" + ordinal[tema.tamanho_grupo-1] + "</i>";
+
+    if(tema.integrantes && tema.integrantes.length > 0) {
+      s += " | "
+      tema.integrantes.forEach(function(integrante, i){
+        s += integrante;
+        if(i < tema.integrantes.length-1) s += ", ";
+      });
+    }
+    s += "</p><br>";
+
+    s += "<p style='color: white'>" + tema.descricao + "</p>";
+    s += "</div>";
+  });
+  s += "</div>"
+}
+projetos_unidades.innerHTML += s;
 
 var theChosenOne = function(option){
   if(option != chosen){

@@ -81,6 +81,38 @@ a:hover {
   list-style-type: none;
 }
 
+#projetos {
+  width: 90%;
+}
+
+.proj_indice {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.proj_unidades {
+  border: thin solid white;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius:20px;
+  text-align: center;
+}
+
+.proj_params {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.proj_tema {
+  color: white;
+  text-align: justify;
+  width: 70%;
+  min-width: 270px;
+  max-width: 100%;
+  border-bottom: thin solid white;
+  margin-bottom: 25px;
+}
+
 #pontosExtrasTitle {
   display: inline-block;
   text-align: justify;
